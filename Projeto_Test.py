@@ -118,7 +118,8 @@ else:
             "Cadastrar Cliente",
             "Cadastrar Pet",
             "Novo Agendamento",
-            "Agenda Dia/Semana/Mês"
+            "Agenda Dia/Semana/Mês",
+            "Clientes Cadastrados"
         ])
         aba1, aba2, aba3, aba4 = abas
 

@@ -7,10 +7,6 @@ CREATE TABLE USUARIOS (
     perfil VARCHAR(20) NOT NULL CHECK (perfil IN ('Dono', 'Funcionario'))
 );
 
-INSERT INTO USUARIOS (nome, email, senha, perfil) VALUES 
-('Samanta', 'dona@petshop.com', '123456', 'Dono'),
-('João Atendente', 'funcionario@petshop.com', '123456', 'Funcionario');
-
 -- 2. TABELA DE CLIENTES
 CREATE TABLE CLIENTES (
     id_cliente INT IDENTITY(1,1) PRIMARY KEY,

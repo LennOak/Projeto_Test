@@ -453,27 +453,26 @@ else:
     # =========================================================================
     # ABA 5: CLIENTES CADASTRADOS (APENAS DONO)
     # =========================================================================
-    if st.session_state["perfil"] == "Dono":
-        with aba5:
-            st.header("Lista de Clientes, Contatos e Bairros")
-            try:
-                sql_clientes_pets = """
-                    SELECT 
-                        c.nome_cliente AS [Cliente],
-                        c.telefone_cliente AS [Telefone / WhatsApp],
-                        c.Bairro AS [Bairro],
-                        p.nome_pet AS [Pet],
-                        p.especie_pet AS [Espécie],
-                        p.raca_pet AS [Raça],
-                        p.clubinho AS [Clubinho]
-                    FROM CLIENTES c
-                    LEFT JOIN PETS p ON c.id_cliente = p.id_cliente
-                    ORDER BY c.nome_cliente ASC
-                """
-                df_relatorio = pd.read_sql(text(sql_clientes_pets), engine)
-                st.dataframe(df_relatorio, use_container_width=True)
-            except Exception as e:
-                st.error(f"Erro ao carregar lista de clientes: {e}")
+   with aba5:
+        st.header("Lista de Clientes, Contatos e Bairros")
+        try:
+            sql_clientes_pets = """
+                SELECT 
+                    c.nome_cliente AS [Cliente],
+                    c.telefone_cliente AS [Telefone / WhatsApp],
+                    c.Bairro AS [Bairro],
+                    p.nome_pet AS [Pet],
+                    p.especie_pet AS [Espécie],
+                    p.raca_pet AS [Raça],
+                    p.clubinho AS [Clubinho]
+                FROM CLIENTES c
+                LEFT JOIN PETS p ON c.id_cliente = p.id_cliente
+                ORDER BY c.nome_cliente ASC
+            """
+            df_relatorio = pd.read_sql(text(sql_clientes_pets), engine)
+            st.dataframe(df_relatorio, use_container_width=True)
+        except Exception as e:
+            st.error(f"Erro ao carregar lista de clientes: {e}")
 
     # =========================================================================
     # ABA 6: GERENCIAR USUÁRIOS (APENAS DONO)

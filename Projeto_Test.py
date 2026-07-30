@@ -121,7 +121,7 @@ else:
             "Agenda Dia/Semana/Mês",
             "Clientes Cadastrados"
         ])
-        aba1, aba2, aba3, aba4 = abas
+        aba1, aba2, aba3, aba4, aba5 = abas
 
     # =========================================================================
     # ABA 1: CADASTRAR CLIENTE

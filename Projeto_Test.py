@@ -453,7 +453,7 @@ else:
     # =========================================================================
     # ABA 5: CLIENTES CADASTRADOS (APENAS DONO)
     # =========================================================================
-   with aba5:
+    with aba5:
         st.header("Lista de Clientes, Contatos e Bairros")
         try:
             sql_clientes_pets = """
